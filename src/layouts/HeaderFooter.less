@@ -1,0 +1,93 @@
+.normal {
+    display: flex;
+    align-items: center;
+    font-family: Georgia, sans-serif;
+    margin-top: 4em;
+    text-align: center;
+  }
+.desc {
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  margin:  0 ;
+  list-style: none;
+  line-height: 1.5em;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 1.8em 0 0;
+    list-style: none;
+    line-height: 1.5em;
+  }
+
+.list code {
+    background: #f7f7f7;
+}
+
+
+
+.ant-layout-header {
+    position: relative;
+    background: #ffffff;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    z-index: 11;
+    // padding: 0 1rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
+    .main-header-left {
+        display: flex;
+        align-items: center;
+    }
+    .main-header-right{
+        display: flex;
+        align-items: center;
+    }
+    .brand {
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        white-space: nowrap;
+        svg {
+            fill:rgb(0, 123, 255);
+
+        }
+    }
+    .ant-menu {
+        font-family: inherit;
+        line-height: inherit;
+        box-shadow: none;
+        display: inline-block;
+        border: 0;
+        margin-bottom: 1px;
+        a {
+            color: #000000a6
+        }
+      }
+      .ant-menu-item,
+      .ant-menu-item,
+      .ant-menu-submenu-title {
+        padding: 0 1rem;
+      }
+      .ant-menu-item,
+      .ant-menu-submenu {
+        top: 2px;
+      }
+}
+
+
+ @media  screen and (min-device-width: 120px) and (max-device-width:640px) {
+    .main-header-pc {
+       display: none !important;
+    }
+    .main-header-mobile {
+        display: flex !important;
+    }
+}
