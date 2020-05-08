@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import CryptoJS from 'crypto-js';
 import { Button, Row, Form, Input, message } from 'antd';
 import Link from 'umi/link';
 import router from 'umi/router';
@@ -17,7 +18,7 @@ function Login() {
       type: 'user/login',
       payload: {
         email: email,
-        password: password,
+        password: CryptoJS.MD5(password).toString(),
       },
       callback: (data) => {
         storageHelper.set('web_user', data);
@@ -27,7 +28,6 @@ function Login() {
       },
     });
   };
-
 
   return (
     <div>
@@ -42,18 +42,10 @@ function Login() {
           <h3 className="text-center mbb-1 mmt-1">登录</h3>
           <Form layout="vertical" onSubmit={handleSubmit}>
             <Form.Item>
-              <Input placeholder="a@a.com"
-                     onChange={(e) => {
-                       setEmail(e.target.value);
-                     }}
-              />
+              <Input placeholder="a@a.com" onChange={(e) => {setEmail(e.target.value);}}/>
             </Form.Item>
             <Form.Item>
-              <Input.Password placeholder="密码：111111"
-                              onChange={(e) => {
-                                setPassword(e.target.value);
-                              }}
-              />
+              <Input.Password placeholder="密码：111111" onChange={(e) => {setPassword(e.target.value);}}/>
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit" block className="mt-20">
