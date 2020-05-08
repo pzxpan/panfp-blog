@@ -44,7 +44,7 @@ function ArticleHeader() {
               <SubMenu
                 title={
                   <UserAvatar src={user.avatar}/>}>
-                <Menu.Item key="setting:1">写文章</Menu.Item>
+                <Menu.Item key="setting:1"><Link to="/article/editor">写文章</Link></Menu.Item>
                 <Menu.Divider/>
                 <Menu.Item key="setting:6" onClick={logout}>退出</Menu.Item>
               </SubMenu>

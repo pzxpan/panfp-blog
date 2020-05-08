@@ -27,10 +27,10 @@ const codeMessage = {
 /**
  * 异常处理程序
  */
-const errorHandler = (response) => {
-  const { code } = response;
-  if (code > 400) {
-    const errorText = response.msg;
+const errorHandler = error => {
+  const { response } = error;
+  if (response && response.status) {
+    const errorText = codeMessage[response.status] || response.statusText;
     const { status, url } = response;
     notification.error({
       message: `请求错误 ${status}: ${url}`,

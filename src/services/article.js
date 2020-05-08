@@ -58,8 +58,15 @@ export async function delArticleComment(params) {
   });
 }
 
-export async function getArticleLabel(params) {
+export async function getArticleLabels(params) {
   return request(BASE_URL +'article_labels', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+export async function getAllLabels(params) {
+  return request(BASE_URL +'all_labels', {
     method: 'POST',
     data: params,
   });
@@ -115,6 +122,20 @@ export async function getRecommendCategory(params) {
 
 export async function getAllHeaderCategory(params) {
   return request(BASE_URL +'all_header_categories', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+export async function postArticleContent(params) {
+  return request(BASE_URL +'add_article', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+export async function postDraftContent(params) {
+  return request(BASE_URL +'add_draft', {
     method: 'POST',
     data: params,
   });

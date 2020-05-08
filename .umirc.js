@@ -30,10 +30,16 @@ export default {
       component: '../layouts/ArticleLayout',
       routes: [
         {
+          path: '/article/editor',
+          name: 'detail',
+          component: './article/articleedit',
+        },
+        {
           path: '/article/:id',
           name: 'detail',
           component: './article/article',
         },
+
         {
           component: './404',
         },

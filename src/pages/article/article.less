@@ -1,3 +1,31 @@
+.wrapper {
+  .editorFooter {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+    .submitBtn {
+      margin-right: 36px;
+      color: #fff;
+      //background: @primary-color;
+    }
+    .draftBtn {
+      margin-right: 36px;
+      color: #fff;
+      background: #f08a5d;
+    }
+    .cancelBtn {
+      color: #fff;
+      background: #dc6673;
+    }
+  }
+  .editor {
+    border: 1px solid #F1F1F1;
+    padding: 5px;
+    border-radius: 2px;
+    height: auto;
+    min-height: 350px;
+  }
+}
 .article-panel{
   position: fixed;
   width: 40px;
@@ -35,4 +63,31 @@
 .ant-list-items .ant-list-item-action{
   margin-top: 5px !important
 }
-  
+
+.articleEditPage {
+  position: relative;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 100px;
+  max-width: 1400px;
+  font-size: 14px;
+  .tagsContainer {
+    font-size: 14px;
+    :global {
+      .ant-tag {
+        margin-right: 12px;
+        font-size: 13px;
+      }
+    }
+  }
+  :global {
+    .bf-container {
+      border: 1px solid #cfcfcf;
+      border-radius: 4px;
+    }
+  }
+}
+
+

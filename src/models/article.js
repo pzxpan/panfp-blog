@@ -9,7 +9,8 @@ import {
   getArticleComment,
   getUserArticleComment,
   delArticleComment,
-  getArticleLabel,
+  getArticleLabels,
+  getAllLabels,
   addArticleLike,
   addArticleView,
 
@@ -17,7 +18,9 @@ import {
   cancelArticleLike,
   getCategory,
   getRecommendCategory,
-  getAllHeaderCategory
+  getAllHeaderCategory,
+  postArticleContent,
+  postDraftContent
 } from '@/services/article';
 
 
@@ -77,7 +80,12 @@ export default {
     },
 
     * getArticleLabel({ payload ,callback }, { call, put }) {
-      const data = yield call(getArticleLabel, payload);
+      const data = yield call(getArticleLabels, payload);
+      if (callback && data) callback(data)
+    },
+
+    * getAllLabels({ payload ,callback }, { call, put }) {
+      const data = yield call(getAllLabels, payload);
       if (callback && data) callback(data)
     },
 
@@ -111,8 +119,18 @@ export default {
       if (callback && data) callback(data)
     },
 
-    * all_header_categories({ payload,callback }, { call, put }) {
+    * allHeaderCategories({ payload,callback }, { call, put }) {
       const data = yield call(getAllHeaderCategory, payload);
+      if (callback && data) callback(data)
+    },
+
+    * addArticleContent({ payload,callback }, { call, put }) {
+      const data = yield call(postArticleContent, payload);
+      if (callback && data) callback(data)
+    },
+
+    * addDraftContent({ payload,callback }, { call, put }) {
+      const data = yield call(postDraftContent, payload);
       if (callback && data) callback(data)
     },
   },

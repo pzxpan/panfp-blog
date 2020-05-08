@@ -22,7 +22,7 @@ function MainHeader() {
 
   useEffect(() => {
     dismenu({
-      type: 'article/all_header_categories',
+      type: 'article/allHeaderCategories',
       payload: {
         category_id: 0,
       },
@@ -93,9 +93,9 @@ function MainHeader() {
               <SubMenu
                 title={
                   <UserAvatar src={user.avatar}/>}>
-                <Menu.Item key="setting:1">写文章</Menu.Item>
+                <Menu.Item ><Link to="/article/editor">写文章</Link></Menu.Item>
                 <Menu.Divider/>
-                <Menu.Item key="setting:6" onClick={logout}>退出</Menu.Item>
+                <Menu.Item onClick={logout}>退出</Menu.Item>
               </SubMenu>
             </Menu>
           </div>)
