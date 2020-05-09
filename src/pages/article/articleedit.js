@@ -5,6 +5,7 @@ import style from './article.less';
 import 'braft-editor/dist/index.css';
 import 'braft-extensions/dist/code-highlighter.css';
 import BraftEditor, { EditorState } from 'braft-editor';
+import storageHelper from '../../utils/storage';
 
 const labelSpan = 2;
 const contentSpan = 16;
@@ -14,6 +15,7 @@ const { confirm } = Modal;
 const emptyRaw = `{ blocks: [{ key: '98r8g', text: '', type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {} }], entityMap: {} }`;
 
 function ArticleEdit() {
+  const user = storageHelper.get('web_user');
   const [editorState, setEditorState] = useState(BraftEditor.createEditorState(emptyRaw));
   const [title, setTitle] = useState('');
   const [intro, setIntro] = useState('');
@@ -43,14 +45,17 @@ function ArticleEdit() {
 
   function saveArticle(e) {
     dispatch({
-      type: 'article/add_article_content',
+      type: 'article/addArticleContent',
       payload: {
+        user_id:user.user_id,
         title: title,
         category_id: categoryId,
         content_html: editorState.toHTML(),
         intro: intro,
         labels: labels.filter((item) => {
           return !item.select;
+        }).map((item)=> {
+          return item.label_id;
         }),
       },
       callback: (success) => {
@@ -61,7 +66,7 @@ function ArticleEdit() {
 
   function saveDraft(e) {
     dispatch({
-      type: 'article/add_draft_content',
+      type: 'article/addDraftContent',
       payload: {
         title: title,
         category_id: categoryId,
