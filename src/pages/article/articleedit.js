@@ -44,24 +44,28 @@ function ArticleEdit() {
   }, []);
 
   function saveArticle(e) {
-    dispatch({
-      type: 'article/addArticleContent',
-      payload: {
-        user_id:user.user_id,
-        title: title,
-        category_id: categoryId,
-        content_html: editorState.toHTML(),
-        intro: intro,
-        labels: labels.filter((item) => {
-          return !item.select;
-        }).map((item)=> {
-          return item.label_id;
-        }),
-      },
-      callback: (success) => {
-        message.success('提交成功，等待管理员审核!! 创作很费脑，请稍作休息');
-      },
-    });
+    if (user && user.user_id) {
+      dispatch({
+        type: 'article/addArticleContent',
+        payload: {
+          user_id: user.user_id,
+          title: title,
+          category_id: categoryId,
+          content_html: editorState.toHTML(),
+          intro: intro,
+          labels: labels.filter((item) => {
+            return !item.select;
+          }).map((item) => {
+            return item.label_id;
+          }),
+        },
+        callback: (success) => {
+          message.success('提交成功，等待管理员审核!! 创作很费脑，请稍作休息');
+        },
+      });
+    } else {
+      message.success('请先登录');
+    }
   }
 
   function saveDraft(e) {
@@ -121,7 +125,9 @@ function ArticleEdit() {
                     key={label.name}
                     closable
                     color="#00adb5"
-                    afterClose={() =>{label.select = false}}>
+                    afterClose={() => {
+                      label.select = false;
+                    }}>
                     {isLongTag ? `${label.name.slice(0, 6)}...` : label.name}
                   </Tag>
                 );
