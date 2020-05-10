@@ -219,15 +219,6 @@ function Article({ match }) {
                 </div>
               </div>
               }
-                <Divider dashed style={{ marginBottom: 0 }}/>
-                <div style={{ marginLeft: 10, fontSize: 16, marginTop: 10 }}>
-                  <Tooltip title="https://www.panfp.cn">
-                    <a href="https://www.panfp.cn" style={{ marginRight: 10 }}><Icon type="global"/></a>
-                  </Tooltip>
-                  <Tooltip title="https://github.com/pzxpan/panfp-blog">
-                    <a href="https://github.com/pzxpan/panfp-blog" style={{ marginRight: 10 }}><Icon type="github"/></a>
-                  </Tooltip>
-                </div>
               </Card>
               <Card
                 title="相关文章"

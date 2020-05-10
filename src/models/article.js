@@ -101,7 +101,8 @@ export default {
 
     * cancelLike({ payload, callback }, { call, put }) {
       const data = yield call(cancelArticleLike, payload);
-      if (callback && data) callback(data)
+      //data为0时，会导致判断callback && data为假,
+      if (callback) callback(data)
     },
 
     * isLike({ payload, callback }, { call, put }) {

@@ -35,7 +35,7 @@ function ArticleHeader() {
           <img src={logo} width="53px" height="53px"/>
         </Link>
       </Link>
-      <div className="desc">函数式编程的乐园，不止于技术，还有生活</div>
+      <div className="desc">不止于技术，还有生活</div>
       <div className="main-header-right">
         {isLogin
           ? (<div>
