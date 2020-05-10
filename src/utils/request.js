@@ -5,6 +5,7 @@
 import { extend } from 'umi-request';
 import { notification } from 'antd';
 import storageHelper from './storage';
+export const BASE_URL = 'https://www.panfp.cn/api/';
 
 const codeMessage = {
   200: '服务器成功返回请求的数据。',

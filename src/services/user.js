@@ -1,5 +1,4 @@
-import request from '@/utils/request';
-const BASE_URL = 'http://localhost:8080/api/';
+import request,{BASE_URL} from '@/utils/request';
 export async function login(params) {
   return request(BASE_URL + "login", {
     method: 'POST',
