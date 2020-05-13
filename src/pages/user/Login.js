@@ -42,10 +42,10 @@ function Login() {
           <h3 className="text-center mbb-1 mmt-1">登录</h3>
           <Form layout="vertical" onSubmit={handleSubmit}>
             <Form.Item>
-              <Input placeholder="a@a.com" onChange={(e) => {setEmail(e.target.value);}}/>
+              <Input placeholder="test@163.com" onChange={(e) => {setEmail(e.target.value);}}/>
             </Form.Item>
             <Form.Item>
-              <Input.Password placeholder="密码：111111" onChange={(e) => {setPassword(e.target.value);}}/>
+              <Input.Password placeholder="密码" onChange={(e) => {setPassword(e.target.value);}}/>
             </Form.Item>
             <Form.Item>
               <Button type="primary" htmlType="submit" block className="mt-20">

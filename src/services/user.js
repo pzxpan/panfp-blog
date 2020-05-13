@@ -19,3 +19,19 @@ export async function detailUser(params) {
     data: params,
   });
 }
+
+export async function updateUserDetail(params) {
+  return request(BASE_URL + 'update_user_detail', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+export async function changePassword(params) {
+  return request(BASE_URL + 'change_password', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+

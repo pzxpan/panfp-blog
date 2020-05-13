@@ -27,8 +27,13 @@ export default {
     },
     {
       path: '/article',
-      component: '../layouts/ArticleLayout',
+      component: '../layouts/UserLayout',
       routes: [
+        {
+          path: '/article/editor/:id',
+          name: 'detail',
+          component: './article/articleedit',
+        },
         {
           path: '/article/editor',
           name: 'detail',
@@ -40,6 +45,26 @@ export default {
           component: './article/article',
         },
 
+        {
+          component: './404',
+        },
+      ],
+    },
+
+    {
+      path: '/mine',
+      component: '../layouts/BasicLayout',
+      routes: [
+        {
+          path: '/mine/myarticle',
+          name: 'myarticle',
+          component: './mine/myarticle',
+        },
+        {
+          path: '/mine/setting',
+          name: 'setting',
+          component: './mine/setting',
+        },
         {
           component: './404',
         },

@@ -5,6 +5,8 @@ import {
   getArticleDetail,
   addArticleComment,
   getUserArticle,
+  getUserArticleDetail,
+  updateArticleDetail,
 
   getArticleComment,
   getUserArticleComment,
@@ -132,6 +134,16 @@ export default {
 
     * addDraftContent({ payload,callback }, { call, put }) {
       const data = yield call(postDraftContent, payload);
+      if (callback && data) callback(data)
+    },
+
+    * getUserArticleDetail({ payload,callback }, { call, put }) {
+      const data = yield call(getUserArticleDetail, payload);
+      if (callback && data) callback(data)
+    },
+
+    * updateArticleDetail({ payload,callback }, { call, put }) {
+      const data = yield call(updateArticleDetail, payload);
       if (callback && data) callback(data)
     },
   },

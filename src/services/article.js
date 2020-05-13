@@ -140,6 +140,22 @@ export async function postDraftContent(params) {
   });
 }
 
+export async function getUserArticleDetail(params) {
+  return request(BASE_URL +'get_user_article_detail', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+export async function updateArticleDetail(params) {
+  return request(BASE_URL +'update_article', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+
+
 
 
 

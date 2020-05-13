@@ -94,6 +94,8 @@ function MainHeader() {
                 title={
                   <UserAvatar src={user.avatar}/>}>
                 <Menu.Item ><Link to="/article/editor">写文章</Link></Menu.Item>
+                <Menu.Item ><Link to="/mine/myarticle">我的文章</Link></Menu.Item>
+                <Menu.Item ><Link to="/mine/setting">设置</Link></Menu.Item>
                 <Menu.Divider/>
                 <Menu.Item onClick={logout}>退出</Menu.Item>
               </SubMenu>

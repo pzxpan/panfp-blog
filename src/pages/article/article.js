@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Col, List, Row, Card, Icon, Tooltip, Divider, message} from 'antd';
+import { Col, List, Row, Card, Icon, message} from 'antd';
 import { ThumbsUp, MessageSquare } from 'react-feather';
 import Link from 'umi/link';
 import moment from 'moment';
@@ -213,7 +213,7 @@ function Article({ match }) {
                 { <UserAvatar src={userDetail.avatar}/> }
                 <div className="pl-3">
                   <h5>{userDetail.nick_name}</h5>
-                  <h6> {'邮箱:' + userDetail.email}</h6>
+                  <h6> {userDetail.email}</h6>
                   <h6>{'等级:' + userDetail.level}</h6>
                   <h6> {'专业:' + userDetail.profession}</h6>
                 </div>

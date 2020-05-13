@@ -113,7 +113,6 @@ function AddComment({ article_id }) {
           <List.Item>
             <Comment
               author={item.nick_name}
-              avatar={item.avatar}
               content={<p>{item.content}</p>}
               datetime={<Datetime time={item.date}/>}
             />
