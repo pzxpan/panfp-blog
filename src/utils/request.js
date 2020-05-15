@@ -53,6 +53,17 @@ request.interceptors.request.use(async (url, options) => {
 
   let token = storageHelper.get('token');
   if (token) {
+    if (options.data instanceof FormData) {
+      const headers = {
+        'Authorization': 'Bearer ' + token,
+      };
+      return (
+        {
+          url: url,
+          options: { ...options, requestType:'form',headers: headers },
+        }
+      );
+    }
     const headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',

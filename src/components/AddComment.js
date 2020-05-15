@@ -7,7 +7,7 @@ import Link from 'umi/link';
 import UserAvatar from './common/UserAvatar';
 import storageHelper from '../utils/storage';
 
-import './styles/Comment.less';
+import './styles/component.less';
 
 moment.locale('zh-cn');
 

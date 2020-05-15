@@ -52,8 +52,20 @@ export default {
     },
 
     {
+      path: '/resume',
+      component: '../layouts/EmptyLayout',
+      routes: [
+        {
+          path: '/resume',
+          name: 'resume',
+          component: './resume/resume',
+        },
+      ],
+    },
+
+    {
       path: '/mine',
-      component: '../layouts/BasicLayout',
+      component: '../layouts/UserLayout',
       routes: [
         {
           path: '/mine/myarticle',
@@ -105,5 +117,4 @@ export default {
       },
     }],
   ],
-
 }

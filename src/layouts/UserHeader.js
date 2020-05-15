@@ -10,7 +10,7 @@ import logo from '@/assets/logo.svg';
 const { Header } = Layout;
 const { SubMenu } = Menu;
 
-function ArticleHeader() {
+function UserHeader() {
   const user = storageHelper.get('web_user');
   const [isLogin, setLogin] = useState(user && user.user_id);
   const dispatch = useDispatch();
@@ -60,4 +60,4 @@ function ArticleHeader() {
   );
 }
 
-export default ArticleHeader;
+export default UserHeader;

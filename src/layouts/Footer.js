@@ -8,8 +8,8 @@ const MainFooter = () => (
     <Footer  style={{ textAlign: 'center' }}>
       <Divider dashed style={{ marginBottom: 0 }}/>
       <div style={{ marginLeft: 10, fontSize: 16, marginTop: 10 }}>
-        <Tooltip title="https://www.panfp.cn">
-          <a href="https://www.panfp.cn" style={{ marginRight: 10 }}><Icon type="global"/></a>
+        <Tooltip title="个人简历">
+          <a href="https://www.panfp.cn/resume" style={{ marginRight: 10 }}><Icon type="global"/></a>
         </Tooltip>
         <Tooltip title="https://github.com/pzxpan/panfp-blog">
           <a href="https://github.com/pzxpan/panfp-blog" style={{ marginRight: 10 }}><Icon type="github"/></a>

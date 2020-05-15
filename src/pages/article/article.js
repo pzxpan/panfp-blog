@@ -20,6 +20,7 @@ import './markdown-github.css';
 import 'highlight.js/styles/github.css';
 import 'highlight.js/styles/atom-one-dark.css';
 import storageHelper from '../../utils/storage';
+import replaceWithKatex from '../../utils/katextext';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('python', python);
@@ -44,9 +45,8 @@ marked.setOptions({
 });
 
 const createMarkup = (body) => {
-  return { __html: body };
-};
-
+  return { __html: replaceWithKatex(body) };
+}
 function Article({ match }) {
   const user = storageHelper.get('web_user');
   const dispatch = useDispatch();
