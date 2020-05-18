@@ -95,7 +95,7 @@ function ArticleEdit({match}) {
           user_id: user.user_id,
           title: title,
           category_id: categoryId,
-          content_html: value,
+          content_html: converter.makeHtml(value),
           intro: intro,
           labels: labels.filter((item) => {
             return !item.select;
@@ -112,27 +112,7 @@ function ArticleEdit({match}) {
       message.success('请先登录');
     }
   }
-
-  function saveDraft(e) {
-    dispatch({
-      type: 'article/addDraftContent',
-      payload: {
-        title: title,
-        category_id: categoryId,
-        content_html: value,
-        intro: intro,
-        labels: labels.filter((item) => {
-          return !item.select;
-        }),
-      },
-      callback: (success) => {
-        message.success('提交成功，等待管理员审核!! 创作很费脑，请稍作休息');
-      },
-    });
-  }
-
   return (
-
     <div className="articleEditPage">
       <div>
         <Row type="flex" align="middle" style={{ margin: '8px 0' }}>
